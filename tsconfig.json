@@ -1,0 +1,22 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compileOnSave": false,
+  "files": [],
+  "references": [
+    {
+      "path": "./apps/xeghep-api"
+    },
+    {
+      "path": "./apps/loyalty-service"
+    },
+    {
+      "path": "./apps/geo-service"
+    },
+    {
+      "path": "./apps/landing-page-ui"
+    },
+    {
+      "path": "./apps/notification-service"
+    }
+  ]
+}
