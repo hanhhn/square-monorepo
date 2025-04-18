@@ -1,5 +1,5 @@
 {
-  "name": "xeghep-api",
+  "name": "square-api",
   "$schema": "../../node_modules/nx/schemas/nx-schema.json",
   "projectType": "application",
   "targets": {
@@ -20,21 +20,21 @@
       "defaultConfiguration": "development",
       "dependsOn": ["build"],
       "options": {
-        "buildTarget": "xeghep-api:build",
+        "buildTarget": "square-api:build",
         "runBuildTargetDependencies": false
       },
       "configurations": {
         "development": {
-          "buildTarget": "xeghep-api:build:development"
+          "buildTarget": "square-api:build:development"
         },
         "production": {
-          "buildTarget": "xeghep-api:build:production"
+          "buildTarget": "square-api:build:production"
         }
       }
     },
     "docker-build": {
       "dependsOn": ["build"],
-      "command": "docker build -f apps/xeghep-api/Dockerfile . -t xeghep-api"
+      "command": "docker build -f apps/square-api/Dockerfile . -t square-api"
     }
   }
 }

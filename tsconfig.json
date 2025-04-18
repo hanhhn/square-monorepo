@@ -4,7 +4,7 @@
   "files": [],
   "references": [
     {
-      "path": "./apps/xeghep-api"
+      "path": "./apps/square-api"
     },
     {
       "path": "./apps/loyalty-service"
