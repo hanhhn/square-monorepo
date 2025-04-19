@@ -4,7 +4,7 @@ import { District } from '../entities/district.entity';
 
 @Injectable()
 export class DistrictRepository extends Repository<District> {
-  constructor(private dataSource: DataSource) {
+  constructor(dataSource: DataSource) {
     super(District, dataSource.createEntityManager());
   }
 }

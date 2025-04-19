@@ -14,8 +14,8 @@ async function bootstrap() {
 
   // openAPI
   const config = new DocumentBuilder()
-    .setTitle('GhepChuyen APIs')
-    .setDescription('The GhepChuyen APIs built at ' + new Date().toUTCString())
+    .setTitle('Square APIs')
+    .setDescription('The Square APIs built at ' + new Date().toUTCString())
     .setVersion('1.0')
     .build();
   const documentFactory = () => SwaggerModule.createDocument(app, config);
