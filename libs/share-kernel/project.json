@@ -1,0 +1,9 @@
+{
+  "name": "share-kernel",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/share-kernel/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project share-kernel --web",
+  "targets": {}
+}

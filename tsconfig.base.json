@@ -20,6 +20,7 @@
     "emitDecoratorMetadata": true,
     "customConditions": ["development"],
     "paths": {
+      "@square/share-kernel": ["libs/share-kernel/src/index.ts"],
       "@square/ui-components": ["libs/ui-components/src/index.ts"]
     }
   }
