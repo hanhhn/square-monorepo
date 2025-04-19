@@ -1,4 +1,7 @@
-import { PartialType } from '@nestjs/swagger';
+import { OmitType, PartialType } from '@nestjs/swagger';
 import { CreateUserRequest } from './create-user';
 
-export class UpdateUserRequest extends PartialType(CreateUserRequest) {}
+// Omit password from update request and make all fields optional
+export class UpdateUserRequest extends PartialType(
+  OmitType(CreateUserRequest, ['password'] as const)
+) {}
