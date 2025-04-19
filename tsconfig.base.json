@@ -18,6 +18,9 @@
     "target": "es2022",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "customConditions": ["development"]
+    "customConditions": ["development"],
+    "paths": {
+      "@square/ui-components": ["libs/ui-components/src/index.ts"]
+    }
   }
 }
