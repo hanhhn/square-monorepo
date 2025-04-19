@@ -44,7 +44,7 @@
       },
       "configurations": {
         "generate": {
-          "command": "ts-node scripts/generate-migration.ts --name={args.name}"
+          "command": "ts-node ./node_modules/typeorm/cli.js migration:generate apps/square-api/migrations/{args.name} -d apps/square-api/typeorm.config.ts"
         },
         "run": {
           "command": "ts-node ./node_modules/typeorm/cli.js migration:run -d apps/square-api/typeorm.config.ts"

@@ -9,8 +9,8 @@ export default new DataSource({
   username: process.env.DB_USER || 'postgres',
   password: process.env.DB_PASS || '',
   database: process.env.DB_NAME || 'postgres',
-  entities: ['src/entities/**/*.js'],
-  migrations: ['src/migrations/**/*.js'],
+  entities: [__dirname + '/src/**/*.entity{.ts,.js}'],
+  migrations: [__dirname + '/src/migrations/**/*{.ts,.js}'],
   synchronize: false,
-  migrationsTableName: 'migrations',
+  migrationsTableName: '__migrations',
 });
