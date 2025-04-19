@@ -12,6 +12,7 @@
     "@nestjs/swagger": "^11.1.4",
     "@nestjs/typeorm": "^11.0.0",
     "axios": "^1.6.0",
+    "class-transformer": "^0.5.1",
     "class-validator": "^0.14.1",
     "minimist": "^1.2.8",
     "pg": "^8.14.1",
