@@ -2,7 +2,7 @@ import { Controller, Get, Param, ParseIntPipe } from '@nestjs/common';
 import { AddressService } from './address.service';
 import { ApiOperation, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { ProvinceDTO } from './dtos/province.dto';
-import { DistrictDTO } from './dtos/district.dto';
+import { DistrictDto } from './dtos/district.dto';
 import { WardDTO } from './dtos/ward.dto';
 
 @ApiTags('Address')
@@ -28,9 +28,9 @@ export class AddressController {
   @ApiResponse({
     status: 200,
     description: 'List of districts in the province',
-    type: [DistrictDTO]
+    type: [DistrictDto]
   })
-  async getDistrictsByProvinceId(@Param('provinceId', ParseIntPipe) provinceId: number): Promise<DistrictDTO[]> {
+  async getDistrictsByProvinceId(@Param('provinceId', ParseIntPipe) provinceId: number): Promise<DistrictDto[]> {
     return this.addressService.getDistrictsByProvinceId(provinceId);
   }
 

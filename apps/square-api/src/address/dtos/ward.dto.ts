@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 
-export class WardDTO {
+export class WardDto {
   @ApiProperty({ description: 'The unique identifier of the ward' })
   id!: number;
 

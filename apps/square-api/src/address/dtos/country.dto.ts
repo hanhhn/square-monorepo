@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 
-export class CountryDTO {
+export class CountryDto {
   @ApiProperty({ description: 'The unique identifier of the country' })
   id!: number;
 
