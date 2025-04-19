@@ -1,5 +1,6 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, OneToMany } from 'typeorm';
 import { UserRole } from "./user-role.enum";
+import { Vehicle } from '../../vehicles/entities/vehicle.entity';
 
 @Entity('users')
 export class User {
@@ -29,4 +30,7 @@ export class User {
 
   @UpdateDateColumn()
   updatedAt!: Date;
+
+  @OneToMany(() => Vehicle, (vehicle) => vehicle.driver)
+  vehicles!: Vehicle[];
 }
