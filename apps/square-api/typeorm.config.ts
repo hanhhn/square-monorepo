@@ -1,13 +1,16 @@
 import { DataSource } from 'typeorm';
+import * as dotenv from 'dotenv';
+dotenv.config(); // load .env if using
 
 export default new DataSource({
   type: 'postgres',
-  host: process.env.DB_HOST,
-  port: parseInt(process.env.DB_PORT ?? '5432'),
-  username: process.env.DB_USERNAME,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-  entities: ['apps/square-api/src/**/*.entity.ts'],
-  migrations: ['apps/square-api/migrations/*.ts'],
+  host: process.env.DB_HOST || 'localhost',
+  port: Number(process.env.DB_PORT) || 5432,
+  username: process.env.DB_USER || 'postgres',
+  password: process.env.DB_PASS || '',
+  database: process.env.DB_NAME || 'postgres',
+  entities: ['src/entities/**/*.js'],
+  migrations: ['src/migrations/**/*.js'],
   synchronize: false,
+  migrationsTableName: 'migrations',
 });

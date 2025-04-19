@@ -35,6 +35,30 @@
     "docker-build": {
       "dependsOn": ["build"],
       "command": "docker build -f apps/square-api/Dockerfile . -t square-api"
+    },
+    "migration": {
+      "executor": "nx:run-commands",
+      "defaultConfiguration": "generate",
+      "options": {
+        "command": ""
+      },
+      "configurations": {
+        "generate": {
+          "command": "ts-node scripts/generate-migration.ts --name={args.name}"
+        },
+        "run": {
+          "command": "ts-node ./node_modules/typeorm/cli.js migration:run -d apps/square-api/typeorm.config.ts"
+        },
+        "revert": {
+          "command": "ts-node ./node_modules/typeorm/cli.js migration:revert -d apps/square-api/typeorm.config.ts"
+        }
+      }
+    },
+    "say-hello": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "ts-node -p -e 'Date.now()'"
+      }
     }
   }
 }
