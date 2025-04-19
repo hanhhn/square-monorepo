@@ -1,5 +1,6 @@
 import { DataSource } from 'typeorm';
 import * as dotenv from 'dotenv';
+import { join } from 'path';
 dotenv.config(); // load .env if using
 
 export default new DataSource({
@@ -9,8 +10,8 @@ export default new DataSource({
   username: process.env.DB_USER || 'postgres',
   password: process.env.DB_PASS || '',
   database: process.env.DB_NAME || 'postgres',
-  entities: [__dirname + '/src/**/*.entity{.ts,.js}'],
-  migrations: [__dirname + '/src/migrations/**/*{.ts,.js}'],
+  entities: [join(__dirname, 'src/**/*.entity{.ts,.js}')],
+  migrations: [join(__dirname, 'migrations/*.{ts,js}')],
   synchronize: false,
   migrationsTableName: '__migrations',
 });

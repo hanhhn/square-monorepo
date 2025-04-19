@@ -12,7 +12,7 @@ import { join } from 'path';
       password: process.env.DB_PASS || '',
       database: process.env.DB_NAME || 'postgres',
       entities: [join(__dirname, '**', '*.entity.{ts,js}')],
-      migrations: [join(__dirname, 'migrations', '*.{ts,js}')],
+      migrations: [join(__dirname, '..', 'migrations', '*.{ts,js}')],
       migrationsRun: false,
       synchronize: false,
       autoLoadEntities: true,
