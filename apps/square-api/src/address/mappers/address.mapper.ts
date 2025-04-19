@@ -21,9 +21,6 @@ export class AddressMapper {
     const dto = new ProvinceDTO();
     dto.id = province.id;
     dto.name = province.name;
-    if (province.country) {
-      dto.country = this.toCountryDTO(province.country);
-    }
     return dto;
   }
 
@@ -31,9 +28,6 @@ export class AddressMapper {
     const dto = new DistrictDTO();
     dto.id = district.id;
     dto.name = district.name;
-    if (district.province) {
-      dto.province = this.toProvinceDTO(district.province);
-    }
     return dto;
   }
 
@@ -41,9 +35,6 @@ export class AddressMapper {
     const dto = new WardDTO();
     dto.id = ward.id;
     dto.name = ward.name;
-    if (ward.district) {
-      dto.district = this.toDistrictDTO(ward.district);
-    }
     return dto;
   }
 
