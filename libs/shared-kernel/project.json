@@ -1,0 +1,18 @@
+{
+  "name": "shared-kernel",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared-kernel/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project shared-kernel --web",
+  "targets": {
+    "build": {
+      "executor": "@nx/webpack:webpack",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/shared-kernel",
+        "webpackConfig": "libs/shared-kernel/webpack.config.js"
+      }
+    }
+  }
+}

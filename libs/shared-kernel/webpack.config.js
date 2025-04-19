@@ -3,18 +3,18 @@ const { join } = require('path');
 
 module.exports = {
   output: {
-    path: join(__dirname, '../../dist/apps/loyalty-service'),
+    path: join(__dirname, '../../dist/libs/shared-kernel'),
   },
   plugins: [
     new NxAppWebpackPlugin({
       target: 'node',
       compiler: 'tsc',
-      main: './src/main.ts',
-      tsConfig: './tsconfig.app.json',
-      assets: ['./src/assets'],
+      main: './src/index.ts',
+      tsConfig: './tsconfig.lib.json',
+      assets: [],
       optimization: false,
       outputHashing: 'none',
       generatePackageJson: true,
-    }),
+    })
   ],
 };
