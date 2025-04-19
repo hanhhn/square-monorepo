@@ -1,9 +1,9 @@
 import { Controller, Get, Param, ParseIntPipe } from '@nestjs/common';
 import { AddressService } from './address.service';
 import { ApiOperation, ApiParam, ApiResponse, ApiTags } from '@nestjs/swagger';
-import { Province } from './entities/province.entity';
-import { District } from './entities/district.entity';
-import { Ward } from './entities/ward.entity';
+import { ProvinceDTO } from './dtos/province.dto';
+import { DistrictDTO } from './dtos/district.dto';
+import { WardDTO } from './dtos/ward.dto';
 
 @ApiTags('Address')
 @Controller('address')
@@ -16,9 +16,9 @@ export class AddressController {
   @ApiResponse({
     status: 200,
     description: 'List of provinces in the country',
-    type: [Province]
+    type: [ProvinceDTO]
   })
-  async getProvincesByCountryId(@Param('countryId', ParseIntPipe) countryId: number) {
+  async getProvincesByCountryId(@Param('countryId', ParseIntPipe) countryId: number): Promise<ProvinceDTO[]> {
     return this.addressService.getProvincesByCountryId(countryId);
   }
 
@@ -28,9 +28,9 @@ export class AddressController {
   @ApiResponse({
     status: 200,
     description: 'List of districts in the province',
-    type: [District]
+    type: [DistrictDTO]
   })
-  async getDistrictsByProvinceId(@Param('provinceId', ParseIntPipe) provinceId: number) {
+  async getDistrictsByProvinceId(@Param('provinceId', ParseIntPipe) provinceId: number): Promise<DistrictDTO[]> {
     return this.addressService.getDistrictsByProvinceId(provinceId);
   }
 
@@ -40,9 +40,9 @@ export class AddressController {
   @ApiResponse({
     status: 200,
     description: 'List of wards in the district',
-    type: [Ward]
+    type: [WardDTO]
   })
-  async getWardsByDistrictId(@Param('districtId', ParseIntPipe) districtId: number) {
+  async getWardsByDistrictId(@Param('districtId', ParseIntPipe) districtId: number): Promise<WardDTO[]> {
     return this.addressService.getWardsByDistrictId(districtId);
   }
 }

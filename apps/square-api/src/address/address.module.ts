@@ -10,6 +10,7 @@ import { CountryRepository } from './repositories/country.repository';
 import { ProvinceRepository } from './repositories/province.repository';
 import { DistrictRepository } from './repositories/district.repository';
 import { WardRepository } from './repositories/ward.repository';
+import { AddressMapper } from './mappers/address.mapper';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Country, Province, District, Ward])],
@@ -20,6 +21,7 @@ import { WardRepository } from './repositories/ward.repository';
     ProvinceRepository,
     DistrictRepository,
     WardRepository,
+    AddressMapper,
   ],
 })
 export class AddressModule {}
