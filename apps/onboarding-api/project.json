@@ -1,0 +1,64 @@
+{
+  "name": "onboarding-api",
+  "$schema": "../../node_modules/nx/schemas/nx-schema.json",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "webpack-cli build",
+        "args": ["node-env=development"]
+      },
+      "configurations": {
+        "development": {
+          "args": ["node-env=development"]
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": ["build"],
+      "options": {
+        "buildTarget": "onboarding-api:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "onboarding-api:build:development"
+        },
+        "production": {
+          "buildTarget": "onboarding-api:build:production"
+        }
+      }
+    },
+    "docker-build": {
+      "dependsOn": ["build"],
+      "command": "docker build -f apps/onboarding-api/Dockerfile . -t onboarding-api"
+    },
+    "migration": {
+      "executor": "nx:run-commands",
+      "defaultConfiguration": "generate",
+      "options": {
+        "command": ""
+      },
+      "configurations": {
+        "generate": {
+          "command": "ts-node ./node_modules/typeorm/cli.js migration:generate apps/onboarding-api/migrations/{args.name} -d apps/onboarding-api/typeorm.config.ts"
+        },
+        "run": {
+          "command": "ts-node ./node_modules/typeorm/cli.js migration:run -d apps/onboarding-api/typeorm.config.ts"
+        },
+        "revert": {
+          "command": "ts-node ./node_modules/typeorm/cli.js migration:revert -d apps/onboarding-api/typeorm.config.ts"
+        }
+      }
+    },
+    "say-hello": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "ts-node -p -e 'Date.now()'"
+      }
+    }
+  }
+}
