@@ -7,11 +7,14 @@
   "// targets": "to see all targets run: nx show project shared-kernel --web",
   "targets": {
     "build": {
-      "executor": "@nx/webpack:webpack",
+      "executor": "@nx/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/libs/shared-kernel",
-        "webpackConfig": "libs/shared-kernel/webpack.config.js"
+        "tsConfig": "libs/shared-kernel/tsconfig.lib.json",
+        "packageJson": "libs/shared-kernel/package.json",
+        "main": "libs/shared-kernel/src/index.ts",
+        "assets": ["libs/shared-kernel/*.md"]
       }
     }
   }

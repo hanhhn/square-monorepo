@@ -23,6 +23,12 @@
     },
     {
       "path": "./apps/onboarding-api"
+    },
+    {
+      "path": "./libs/shared-kernel"
+    },
+    {
+      "path": "./libs/ui-components"
     }
   ]
 }

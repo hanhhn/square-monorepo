@@ -18,7 +18,11 @@
     "target": "es2022",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    "esModuleInterop": false,
     "customConditions": ["development"],
+    "baseUrl": ".",
+    "rootDir": ".",
+    "sourceMap": true,
     "paths": {
       "@square/shared-kernel": ["libs/shared-kernel/src/index.ts"],
       "@square/ui-components": ["libs/ui-components/src/index.ts"]

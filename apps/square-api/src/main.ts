@@ -20,7 +20,7 @@ async function bootstrap() {
     .setVersion('1.0')
     .build();
   const documentFactory = () => SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup(globalPrefix, app, documentFactory);
+  SwaggerModule.setup('globalPrefix', app, documentFactory);
 
   app.setGlobalPrefix(globalPrefix);
   app.useGlobalFilters(new HttpExceptionFilter());
