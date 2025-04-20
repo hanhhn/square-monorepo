@@ -10,21 +10,6 @@
       "path": "./apps/square-api"
     },
     {
-      "path": "./apps/loyalty-service"
-    },
-    {
-      "path": "./apps/geo-service"
-    },
-    {
-      "path": "./apps/landing-page-ui"
-    },
-    {
-      "path": "./apps/notification-service"
-    },
-    {
-      "path": "./apps/onboarding-api"
-    },
-    {
       "path": "./libs/shared-kernel"
     },
     {

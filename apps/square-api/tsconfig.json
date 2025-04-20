@@ -10,6 +10,9 @@
   "include": [],
   "references": [
     {
+      "path": "../../libs/shared-kernel"
+    },
+    {
       "path": "./tsconfig.app.json"
     }
   ]
